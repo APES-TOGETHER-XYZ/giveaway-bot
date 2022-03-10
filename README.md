@@ -14,7 +14,7 @@ Simple Discord based giveaway bot.
 - Go to the `Bot` tab and click `Add Bot`
 - Click `Reset Token`
 - Copy the generated token and store it somewhere safe
-- Disable `Public Bot'
+- Disable `Public Bot`
 - Enable all `Privileged Server Intents`
 - Go to the `OAuth2` tab then `URL Generator` and select `bot` scope then `Manage Channels`
 - Copy the `Generated URL` and paste it into your browser
