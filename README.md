@@ -14,7 +14,7 @@ Simple Discord based giveaway bot.
 - Go to the `Bot` tab and click `Add Bot`
 - Click `Reset Token`
 - Copy the generated token and store it somewhere safe
-- Disable `Public Bot'
+- Disable `Public Bot`
 - Enable all `Privileged Server Intents`
 - Go to the `OAuth2` tab then `URL Generator` and select `bot` scope then `Manage Channels`
 - Copy the `Generated URL` and paste it into your browser
@@ -28,7 +28,6 @@ Simple Discord based giveaway bot.
 - Enter the emoji you want people to react with (copy and paste from the 'native' column [here](https://apps.timwhitlock.info/emoji/tables/unicode))
 - Enter the image url that you want to be displayed as the icon for the giveaway message
 - Click Deploy app
-
 
 ## Running a giveaway
 
