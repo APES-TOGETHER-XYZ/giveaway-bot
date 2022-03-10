@@ -23,3 +23,5 @@ Simple Discord based giveaway bot.
 ### Deploy to Heroku
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/APES-TOGETHER-XYZ/giveaway-bot)
 
+- Enter a unique app name
+- Click Deploy app
