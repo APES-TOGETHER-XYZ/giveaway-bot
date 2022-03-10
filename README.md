@@ -28,6 +28,10 @@ Simple Discord based giveaway bot.
 - Enter the emoji you want people to react with (copy and paste from the 'native' column [here](https://apps.timwhitlock.info/emoji/tables/unicode))
 - Enter the image url that you want to be displayed as the icon for the giveaway message
 - Click Deploy app
+- Once done, click `Manage`
+- Go to the `Resources` tab
+- If the `worker` row is not enabled, click the edit icon and then enable it.
+- Your bot should now be active in your server
 
 ## Running a giveaway
 
