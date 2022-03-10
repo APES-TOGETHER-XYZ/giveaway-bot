@@ -1,6 +1,7 @@
 import asyncio
 import json
 import random
+import os
 from collections import namedtuple
 from functools import partial
 from typing import Optional
@@ -11,16 +12,13 @@ from discord.ext import commands
 
 Giveaway = namedtuple("Giveaway", ["channel", "duration", "count", "item_name"])
 
-with open("config.json") as file:
-    info = json.load(file)
-    token = info["token"]
-    prefix = info["prefix"]
-    status = info["status"]
-    icon_url = info["icon_url"]
-    emoji = info["emoji"]
+DISCORD_BOT_TOKEN = os.environ["DISCORD_BOT_TOKEN"]
+PREFIX = "!"
+ICON_URL = os.environ["ICON_URL"]
+EMOJI = os.environ["EMOJI"]
 
 client = commands.Bot(
-    command_prefix=prefix, help_command=None, intents=discord.Intents.all()
+    command_prefix=PREFIX, help_command=None, intents=discord.Intents.all()
 )
 
 
@@ -75,17 +73,17 @@ async def start_giveaway(ctx, args: Giveaway) -> int:
     give = discord.Embed(color=0x2ECC71)
     give.set_author(
         name=f"{args.count} {args.item_name.upper()} GIVEAWAY TIME!",
-        icon_url=icon_url,
+        icon_url=ICON_URL,
     )
     give.add_field(
         name=f"{args.count} {args.item_name} Giveaway!",
-        value=f"React with {emoji} to enter!\n Ends in {round(args.duration / 60, 2)} minutes!",
+        value=f"React with {EMOJI} to enter!\n Ends in {round(args.duration / 60, 2)} minutes!",
         inline=False,
     )
     give.set_footer(text=f"Hosted By {ctx.author.name}")
     my_message = await args.channel.send("@everyone", embed=give)
 
-    await my_message.add_reaction(emoji)
+    await my_message.add_reaction(EMOJI)
 
     return my_message.id
 
@@ -106,7 +104,7 @@ async def end_giveaway(message_id: int, args: Giveaway) -> None:
 
     winning_announcement = discord.Embed(color=0xFF2424)
     winning_announcement.set_author(
-        name=f"{args.item_name.upper()} GIVEAWAY HAS ENDED!", icon_url=icon_url
+        name=f"{args.item_name.upper()} GIVEAWAY HAS ENDED!", icon_url=ICON_URL
     )
     winner_names = ",".join([winner.mention for winner in winners])
     winning_announcement.add_field(
@@ -124,7 +122,7 @@ async def end_giveaway(message_id: int, args: Giveaway) -> None:
 @client.event
 async def on_ready():
     print("[Connected]")
-    activity = discord.Game(name=status, type=ActivityType.watching)
+    activity = discord.Game(name="Giveaway", type=ActivityType.watching)
     await client.change_presence(status=discord.Status.online, activity=activity)
 
 
@@ -151,4 +149,4 @@ async def on_command_error(ctx, error):
 
 
 if __name__ == "__main__":
-    client.run(token)
+    client.run(DISCORD_BOT_TOKEN)
