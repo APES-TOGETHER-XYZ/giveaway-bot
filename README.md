@@ -28,3 +28,10 @@ Simple Discord based giveaway bot.
 - Enter the emoji you want people to react with (copy and paste from the 'native' column [here](https://apps.timwhitlock.info/emoji/tables/unicode))
 - Enter the image url that you want to be displayed as the icon for the giveaway message
 - Click Deploy app
+
+
+## Running a giveaway
+
+In a private channel, run `!giveaway` and follow the instructions.
+
+When entering the channel name, be sure to include the `#`

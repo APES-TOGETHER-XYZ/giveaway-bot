@@ -1,7 +1,6 @@
 import asyncio
-import json
-import random
 import os
+import random
 from collections import namedtuple
 from functools import partial
 from typing import Optional
