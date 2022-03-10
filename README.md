@@ -24,4 +24,7 @@ Simple Discord based giveaway bot.
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/APES-TOGETHER-XYZ/giveaway-bot)
 
 - Enter a unique app name
+- Enter your discord bot token from the previous setup
+- Enter the emoji you want people to react with (copy and paste from the 'native' column [here](https://apps.timwhitlock.info/emoji/tables/unicode))
+- Enter the image url that you want to be displayed as the icon for the giveaway message
 - Click Deploy app
